@@ -24,7 +24,6 @@ const [unselect, setUnselect] = useState(false);
 const [usersData, setUsersData] = useState([]);
 
 const checker = () => {
-  console.log(user.user.id)
   isBlock(user.user.id).then(data => {
     console.log(data)
     if(data === true) {
@@ -51,6 +50,7 @@ const checker = () => {
   }
   
   useEffect(() => {
+    checker();
     getUsers().then(data => user.setUsers(data))
     getUsers().then(data => setUsersData(data))
   },[])
