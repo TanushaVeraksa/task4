@@ -9,7 +9,7 @@ import {observer} from 'mobx-react-lite'
 const ToolBar = observer((props) => {
     const {checked} = props;
     const navigation = useNavigate();
-    const TIMEOUT = 1000;    
+    const TIMEOUT = 500;    
 
     const block = () => {
         let emailAuth;

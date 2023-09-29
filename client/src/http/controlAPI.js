@@ -1,5 +1,5 @@
 import { $authHost, $host } from "./index";
-const TIMEOUT = 1000;
+const TIMEOUT = 500;
 
 export const getUsers = async () => {
     const {data} = await $host.get('api/control')
