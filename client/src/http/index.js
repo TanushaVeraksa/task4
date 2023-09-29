@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 const $host = axios.create({
-    baseURL: 'https://task4-b6a1enen1-tanushaveraksa.vercel.app/'
+    baseURL: 'https://task4-one-ashen.vercel.app/'
 })
 
 const $authHost = axios.create({
-    baseURL: 'https://task4-b6a1enen1-tanushaveraksa.vercel.app/'
+    baseURL: 'https://task4-one-ashen.vercel.app/'
 })
 
 const authInterceptor = config => {
