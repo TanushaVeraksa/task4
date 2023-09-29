@@ -35,6 +35,7 @@ const checker = () => {
 }
 
   const selectAll = () => {
+      checker();
       setSelect(true);
       setUnselect(false);
      const usersEmails = user.users.map((elem) => {
@@ -44,6 +45,7 @@ const checker = () => {
   }
 
   const unselectAll = () => {
+      checker();
       setUnselect(true);
       setSelect(false);
       setChecked([])
@@ -56,7 +58,7 @@ const checker = () => {
   },[])
 
   const getSelected = (e) => {
-
+    checker();
     if(e.target.checked) {
       setChecked([...checked, e.target.value])
     } else {
