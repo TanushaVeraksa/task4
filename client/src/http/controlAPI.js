@@ -7,7 +7,7 @@ export const getUsers = async () => {
 
 export const deleteUser = async (email) => {
     await $host.post('api/control/delete', {email});
-    window.location.reload();
+   // window.location.reload();
 }
 
 export const blockUser = async (email, authEmail) => {

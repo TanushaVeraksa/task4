@@ -32,13 +32,11 @@ const ToolBar = observer((props) => {
         checked.forEach(async (elem) => {
             await unblockUser(elem)
         })
-        window.location.reload();
     }
     const deleteUserChecked = () => {
         checked.forEach(async (elem) => {
             await deleteUser(elem)
         })
-        window.location.reload();
     }
     return (
         <div class="btn-group" role="group" aria-label="Basic example">
