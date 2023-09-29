@@ -8,7 +8,8 @@ import {observer} from 'mobx-react-lite'
 
 const ToolBar = observer((props) => {
     const {checked} = props;
-    const navigation = useNavigate();    
+    const navigation = useNavigate();
+    const TIMEOUT = 1000;    
 
     const block = () => {
         let emailAuth;
@@ -26,17 +27,27 @@ const ToolBar = observer((props) => {
             }
         })
         
-        if(!checked.includes(emailAuth)) window.location.reload();
+        if(!checked.includes(emailAuth)) {
+            setTimeout(() => {
+                window.location.reload();
+            }, TIMEOUT)
+        };
     }
     const unBlock = () => {
         checked.forEach(async (elem) => {
             await unblockUser(elem)
         })
+        setTimeout(() => {
+            window.location.reload();
+        }, TIMEOUT)
     }
     const deleteUserChecked = () => {
         checked.forEach(async (elem) => {
             await deleteUser(elem)
         })
+        setTimeout(() => {
+            window.location.reload();
+        }, TIMEOUT)
     }
     return (
         <div class="btn-group" role="group" aria-label="Basic example">

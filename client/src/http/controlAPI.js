@@ -1,4 +1,5 @@
 import { $authHost, $host } from "./index";
+const TIMEOUT = 1000;
 
 export const getUsers = async () => {
     const {data} = await $host.get('api/control')
@@ -7,7 +8,9 @@ export const getUsers = async () => {
 
 export const deleteUser = async (email) => {
     await $host.post('api/control/delete', {email});
-   // window.location.reload();
+    setTimeout(() => {
+        window.location.reload();
+    }, TIMEOUT)
 }
 
 export const blockUser = async (email, authEmail) => {
